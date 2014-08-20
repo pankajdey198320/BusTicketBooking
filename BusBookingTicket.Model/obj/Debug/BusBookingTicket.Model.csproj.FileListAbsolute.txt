@@ -1,0 +1,5 @@
+D:\Projects\BusTicketBooking\BusTicketBooking\BusBookingTicket.Model\bin\Debug\BusBookingTicket.Model.dll
+D:\Projects\BusTicketBooking\BusTicketBooking\BusBookingTicket.Model\bin\Debug\BusBookingTicket.Model.pdb
+D:\Projects\BusTicketBooking\BusTicketBooking\BusBookingTicket.Model\obj\Debug\BusBookingTicket.Model.csprojResolveAssemblyReference.cache
+D:\Projects\BusTicketBooking\BusTicketBooking\BusBookingTicket.Model\obj\Debug\BusBookingTicket.Model.dll
+D:\Projects\BusTicketBooking\BusTicketBooking\BusBookingTicket.Model\obj\Debug\BusBookingTicket.Model.pdb

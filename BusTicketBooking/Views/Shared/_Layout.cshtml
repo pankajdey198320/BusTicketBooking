@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Research Bus Booking System</title>
+        @*<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />*@
+        <meta name="viewport" content = "width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")        
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="container" style="width: auto;">
+                   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                   </a>
+                    <a class="brand" href="#">Research</a>
+                    <div class="nav-collapse">
+                      <ul class="nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Cancel Ticket", "CancelTicket", "Bus")</li>
+                      </ul>
+                    </div><!-- /.nav-collapse -->
+                  </div
+                </div><!-- /navbar-inner -->
+              </div>            
+        </header>
+        <div class="container-fluid">
+              @RenderBody()
+        </div>
+        <footer class="navbar navbar-fixed-bottom"">
+            <p>&copy; @DateTime.Now.Year - Research Bus Booking System</p>
+        </footer>
+                
+        @Scripts.Render("~/bundles/jquery")
+        <script src="/scripts/jquery-ui-1.9.2.custom.min.js"></script>                
+        @*<script src="/scripts/Site.js"></script>*@
+        @Scripts.Render("~/bundles/bootstrap")             
+
+        @RenderSection("scripts", required: false)
+        
+    </body>
+</html>

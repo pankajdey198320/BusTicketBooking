@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTicketBooking", "BusTicketBooking\BusTicketBooking.csproj", "{7DB347A1-1C70-4FE7-9F49-DC0E1E2E2E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTicketBooking.Tests", "BusTicketBooking.Tests\BusTicketBooking.Tests.csproj", "{60814D8A-87BC-4935-813D-B667CE1349C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusBookingTicket.Model", "BusBookingTicket.Model\BusBookingTicket.Model.csproj", "{9349B8AB-7775-456D-BEEB-3466BD3E5E88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB347A1-1C70-4FE7-9F49-DC0E1E2E2E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB347A1-1C70-4FE7-9F49-DC0E1E2E2E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB347A1-1C70-4FE7-9F49-DC0E1E2E2E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB347A1-1C70-4FE7-9F49-DC0E1E2E2E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60814D8A-87BC-4935-813D-B667CE1349C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60814D8A-87BC-4935-813D-B667CE1349C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60814D8A-87BC-4935-813D-B667CE1349C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60814D8A-87BC-4935-813D-B667CE1349C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9349B8AB-7775-456D-BEEB-3466BD3E5E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9349B8AB-7775-456D-BEEB-3466BD3E5E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9349B8AB-7775-456D-BEEB-3466BD3E5E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9349B8AB-7775-456D-BEEB-3466BD3E5E88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
