@@ -1,3 +1,16 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿
+<div class="row-fluid">
+    <div class="span9 sidebar-nav-fixed">
+        @Html.Partial("~/Views/Partial/Search.cshtml")
+    </div>
+</div>
+
+@section scripts{
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('.datefield').datepicker();
+     });
+
+</script>
+    }
