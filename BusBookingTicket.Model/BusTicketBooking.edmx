@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BusBookingTicketModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BusBookingTicketModelStoreContainer">
+          <EntitySet Name="BoardingPoint" EntityType="BusBookingTicketModel.Store.BoardingPoint" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusCompany" EntityType="BusBookingTicketModel.Store.BusCompany" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusDetails" EntityType="BusBookingTicketModel.Store.BusDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusSeatTypeMap" EntityType="BusBookingTicketModel.Store.BusSeatTypeMap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CityDetails" EntityType="BusBookingTicketModel.Store.CityDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PassangerDetails" EntityType="BusBookingTicketModel.Store.PassangerDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PayMentDetails" EntityType="BusBookingTicketModel.Store.PayMentDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reservation" EntityType="BusBookingTicketModel.Store.Reservation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Route" EntityType="BusBookingTicketModel.Store.Route" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoutePrice" EntityType="BusBookingTicketModel.Store.RoutePrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SeatType" EntityType="BusBookingTicketModel.Store.SeatType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StateDetails" EntityType="BusBookingTicketModel.Store.StateDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="BusBookingTicketModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserDetails" EntityType="BusBookingTicketModel.Store.UserDetails" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BusDetails_BusCompany" Association="BusBookingTicketModel.Store.FK_BusDetails_BusCompany">
+            <End Role="BusCompany" EntitySet="BusCompany" />
+            <End Role="BusDetails" EntitySet="BusDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusDetails_Route" Association="BusBookingTicketModel.Store.FK_BusDetails_Route">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="BusDetails" EntitySet="BusDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusSeatTypeMap_BusDetails" Association="BusBookingTicketModel.Store.FK_BusSeatTypeMap_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="BusSeatTypeMap" EntitySet="BusSeatTypeMap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusSeatTypeMap_SeatType" Association="BusBookingTicketModel.Store.FK_BusSeatTypeMap_SeatType">
+            <End Role="SeatType" EntitySet="SeatType" />
+            <End Role="BusSeatTypeMap" EntitySet="BusSeatTypeMap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CityDetails_StateDetails" Association="BusBookingTicketModel.Store.FK_CityDetails_StateDetails">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="CityDetails" EntitySet="CityDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassangerDetails_UserDetails" Association="BusBookingTicketModel.Store.FK_PassangerDetails_UserDetails">
+            <End Role="UserDetails" EntitySet="UserDetails" />
+            <End Role="PassangerDetails" EntitySet="PassangerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_BoardingPoint" Association="BusBookingTicketModel.Store.FK_Reservation_BoardingPoint">
+            <End Role="BoardingPoint" EntitySet="BoardingPoint" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_BusDetails" Association="BusBookingTicketModel.Store.FK_Reservation_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_PassangerDetails" Association="BusBookingTicketModel.Store.FK_Reservation_PassangerDetails">
+            <End Role="PassangerDetails" EntitySet="PassangerDetails" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_PayMentDetails" Association="BusBookingTicketModel.Store.FK_Reservation_PayMentDetails">
+            <End Role="PayMentDetails" EntitySet="PayMentDetails" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Route" Association="BusBookingTicketModel.Store.FK_Reservation_Route">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_UserDetails" Association="BusBookingTicketModel.Store.FK_Reservation_UserDetails">
+            <End Role="UserDetails" EntitySet="UserDetails" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_CityDetails" Association="BusBookingTicketModel.Store.FK_Route_CityDetails">
+            <End Role="CityDetails" EntitySet="CityDetails" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_CityDetails1" Association="BusBookingTicketModel.Store.FK_Route_CityDetails1">
+            <End Role="CityDetails" EntitySet="CityDetails" />
+            <End Role="Route" EntitySet="Route" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_BusDetails" Association="BusBookingTicketModel.Store.FK_RoutePrice_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="RoutePrice" EntitySet="RoutePrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_Route" Association="BusBookingTicketModel.Store.FK_RoutePrice_Route">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="RoutePrice" EntitySet="RoutePrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_SeatType" Association="BusBookingTicketModel.Store.FK_RoutePrice_SeatType">
+            <End Role="SeatType" EntitySet="SeatType" />
+            <End Role="RoutePrice" EntitySet="RoutePrice" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BoardingPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BoardingPointName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BusCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BusCompanyName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BusDetails">
+          <Key>
+            <PropertyRef Name="BusId" />
+          </Key>
+          <Property Name="BusId" Type="int" Nullable="false" />
+          <Property Name="BusNumber" Type="int" />
+          <Property Name="NoOfSeats" Type="int" />
+          <Property Name="BusType" Type="varchar" MaxLength="25" />
+          <Property Name="BusTime" Type="time" />
+          <Property Name="BusCompanyId" Type="int" />
+          <Property Name="routeId" Type="int" />
+        </EntityType>
+        <EntityType Name="BusSeatTypeMap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="BusId" Type="int" Nullable="false" />
+          <Property Name="SeatTypeId" Type="int" />
+          <Property Name="TotalSeatCount" Type="int" />
+        </EntityType>
+        <EntityType Name="CityDetails">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="25" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PassangerDetails">
+          <Key>
+            <PropertyRef Name="Passangerid" />
+          </Key>
+          <Property Name="Passangerid" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="25" />
+          <Property Name="LastName" Type="varchar" MaxLength="25" />
+          <Property Name="Gender" Type="varchar" MaxLength="25" />
+          <Property Name="TicketNumber" Type="int" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="PayMentDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="money" />
+          <Property Name="CVV" Type="int" />
+          <Property Name="ExpiryMonth" Type="tinyint" />
+          <Property Name="NameOfCardHolder" Type="varchar" MaxLength="25" />
+          <Property Name="ExpiryYear" Type="int" />
+          <Property Name="PaymentDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="int" Nullable="false" />
+          <Property Name="routeId" Type="int" />
+          <Property Name="passangerId" Type="int" />
+          <Property Name="BusId" Type="int" />
+          <Property Name="TravelDate" Type="date" />
+          <Property Name="SeatNumber" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="BoardingPointId" Type="int" />
+          <Property Name="PaymentDetailsId" Type="int" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="FromCityId" Type="int" Nullable="false" />
+          <Property Name="ToCityId" Type="int" Nullable="false" />
+          <Property Name="Distance" Type="int" />
+          <Property Name="DepartureTime" Type="time" />
+          <Property Name="ArrivalTime" Type="time" />
+        </EntityType>
+        <EntityType Name="RoutePrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="routeId" Type="int" Nullable="false" />
+          <Property Name="BusId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" />
+          <Property Name="SeatTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="SeatType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="SeatType" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="StateDetails">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateName" Type="varchar" MaxLength="25" />
+          <Property Name="StateId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="PasswordOfUser" Type="varchar" MaxLength="25" />
+          <Property Name="MobileNumber" Type="int" />
+          <Property Name="NameOfCardHolder" Type="varchar" MaxLength="25" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Pincode" Type="int" />
+        </EntityType>
+        <Association Name="FK_BusDetails_BusCompany">
+          <End Role="BusCompany" Type="BusBookingTicketModel.Store.BusCompany" Multiplicity="0..1" />
+          <End Role="BusDetails" Type="BusBookingTicketModel.Store.BusDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusDetails">
+              <PropertyRef Name="BusCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusDetails_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Store.Route" Multiplicity="0..1" />
+          <End Role="BusDetails" Type="BusBookingTicketModel.Store.BusDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BusDetails">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusSeatTypeMap_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.Store.BusDetails" Multiplicity="1" />
+          <End Role="BusSeatTypeMap" Type="BusBookingTicketModel.Store.BusSeatTypeMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="BusSeatTypeMap">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusSeatTypeMap_SeatType">
+          <End Role="SeatType" Type="BusBookingTicketModel.Store.SeatType" Multiplicity="0..1" />
+          <End Role="BusSeatTypeMap" Type="BusBookingTicketModel.Store.BusSeatTypeMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BusSeatTypeMap">
+              <PropertyRef Name="SeatTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CityDetails_StateDetails">
+          <End Role="StateDetails" Type="BusBookingTicketModel.Store.StateDetails" Multiplicity="1" />
+          <End Role="CityDetails" Type="BusBookingTicketModel.Store.CityDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="CityDetails">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassangerDetails_UserDetails">
+          <End Role="UserDetails" Type="BusBookingTicketModel.Store.UserDetails" Multiplicity="0..1" />
+          <End Role="PassangerDetails" Type="BusBookingTicketModel.Store.PassangerDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetails">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PassangerDetails">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_BoardingPoint">
+          <End Role="BoardingPoint" Type="BusBookingTicketModel.Store.BoardingPoint" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardingPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="BoardingPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.Store.BusDetails" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_PassangerDetails">
+          <End Role="PassangerDetails" Type="BusBookingTicketModel.Store.PassangerDetails" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PassangerDetails">
+              <PropertyRef Name="Passangerid" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="passangerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_PayMentDetails">
+          <End Role="PayMentDetails" Type="BusBookingTicketModel.Store.PayMentDetails" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PayMentDetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="PaymentDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Store.Route" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_UserDetails">
+          <End Role="UserDetails" Type="BusBookingTicketModel.Store.UserDetails" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Store.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetails">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_CityDetails">
+          <End Role="CityDetails" Type="BusBookingTicketModel.Store.CityDetails" Multiplicity="1" />
+          <End Role="Route" Type="BusBookingTicketModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDetails">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="FromCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_CityDetails1">
+          <End Role="CityDetails" Type="BusBookingTicketModel.Store.CityDetails" Multiplicity="1" />
+          <End Role="Route" Type="BusBookingTicketModel.Store.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDetails">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="ToCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.Store.BusDetails" Multiplicity="1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.Store.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Store.Route" Multiplicity="1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.Store.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_SeatType">
+          <End Role="SeatType" Type="BusBookingTicketModel.Store.SeatType" Multiplicity="0..1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.Store.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="SeatTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BusBookingTicketModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BusBookingTicketEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BoardingPoints" EntityType="BusBookingTicketModel.BoardingPoint" />
+          <EntitySet Name="BusCompanies" EntityType="BusBookingTicketModel.BusCompany" />
+          <EntitySet Name="BusDetails" EntityType="BusBookingTicketModel.BusDetail" />
+          <EntitySet Name="BusSeatTypeMaps" EntityType="BusBookingTicketModel.BusSeatTypeMap" />
+          <EntitySet Name="CityDetails" EntityType="BusBookingTicketModel.CityDetail" />
+          <EntitySet Name="PassangerDetails" EntityType="BusBookingTicketModel.PassangerDetail" />
+          <EntitySet Name="PayMentDetails" EntityType="BusBookingTicketModel.PayMentDetail" />
+          <EntitySet Name="Reservations" EntityType="BusBookingTicketModel.Reservation" />
+          <EntitySet Name="Routes" EntityType="BusBookingTicketModel.Route" />
+          <EntitySet Name="RoutePrices" EntityType="BusBookingTicketModel.RoutePrice" />
+          <EntitySet Name="SeatTypes" EntityType="BusBookingTicketModel.SeatType" />
+          <EntitySet Name="StateDetails" EntityType="BusBookingTicketModel.StateDetail" />
+          <EntitySet Name="sysdiagrams" EntityType="BusBookingTicketModel.sysdiagram" />
+          <EntitySet Name="UserDetails" EntityType="BusBookingTicketModel.UserDetail" />
+          <AssociationSet Name="FK_Reservation_BoardingPoint" Association="BusBookingTicketModel.FK_Reservation_BoardingPoint">
+            <End Role="BoardingPoint" EntitySet="BoardingPoints" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusDetails_BusCompany" Association="BusBookingTicketModel.FK_BusDetails_BusCompany">
+            <End Role="BusCompany" EntitySet="BusCompanies" />
+            <End Role="BusDetails" EntitySet="BusDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusDetails_Route" Association="BusBookingTicketModel.FK_BusDetails_Route">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="BusDetails" EntitySet="BusDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusSeatTypeMap_BusDetails" Association="BusBookingTicketModel.FK_BusSeatTypeMap_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="BusSeatTypeMap" EntitySet="BusSeatTypeMaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_BusDetails" Association="BusBookingTicketModel.FK_Reservation_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_BusDetails" Association="BusBookingTicketModel.FK_RoutePrice_BusDetails">
+            <End Role="BusDetails" EntitySet="BusDetails" />
+            <End Role="RoutePrice" EntitySet="RoutePrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusSeatTypeMap_SeatType" Association="BusBookingTicketModel.FK_BusSeatTypeMap_SeatType">
+            <End Role="SeatType" EntitySet="SeatTypes" />
+            <End Role="BusSeatTypeMap" EntitySet="BusSeatTypeMaps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CityDetails_StateDetails" Association="BusBookingTicketModel.FK_CityDetails_StateDetails">
+            <End Role="StateDetails" EntitySet="StateDetails" />
+            <End Role="CityDetails" EntitySet="CityDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_CityDetails" Association="BusBookingTicketModel.FK_Route_CityDetails">
+            <End Role="CityDetails" EntitySet="CityDetails" />
+            <End Role="Route" EntitySet="Routes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Route_CityDetails1" Association="BusBookingTicketModel.FK_Route_CityDetails1">
+            <End Role="CityDetails" EntitySet="CityDetails" />
+            <End Role="Route" EntitySet="Routes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassangerDetails_UserDetails" Association="BusBookingTicketModel.FK_PassangerDetails_UserDetails">
+            <End Role="UserDetails" EntitySet="UserDetails" />
+            <End Role="PassangerDetails" EntitySet="PassangerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_PassangerDetails" Association="BusBookingTicketModel.FK_Reservation_PassangerDetails">
+            <End Role="PassangerDetails" EntitySet="PassangerDetails" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_PayMentDetails" Association="BusBookingTicketModel.FK_Reservation_PayMentDetails">
+            <End Role="PayMentDetails" EntitySet="PayMentDetails" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Route" Association="BusBookingTicketModel.FK_Reservation_Route">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_UserDetails" Association="BusBookingTicketModel.FK_Reservation_UserDetails">
+            <End Role="UserDetails" EntitySet="UserDetails" />
+            <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_Route" Association="BusBookingTicketModel.FK_RoutePrice_Route">
+            <End Role="Route" EntitySet="Routes" />
+            <End Role="RoutePrice" EntitySet="RoutePrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoutePrice_SeatType" Association="BusBookingTicketModel.FK_RoutePrice_SeatType">
+            <End Role="SeatType" EntitySet="SeatTypes" />
+            <End Role="RoutePrice" EntitySet="RoutePrices" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BoardingPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BoardingPointName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_BoardingPoint" FromRole="BoardingPoint" ToRole="Reservation" />
+        </EntityType>
+        <EntityType Name="BusCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BusCompanyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BusDetails" Relationship="BusBookingTicketModel.FK_BusDetails_BusCompany" FromRole="BusCompany" ToRole="BusDetails" />
+        </EntityType>
+        <EntityType Name="BusDetail">
+          <Key>
+            <PropertyRef Name="BusId" />
+          </Key>
+          <Property Name="BusId" Type="Int32" Nullable="false" />
+          <Property Name="BusNumber" Type="Int32" />
+          <Property Name="NoOfSeats" Type="Int32" />
+          <Property Name="BusType" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="BusTime" Type="Time" Precision="7" />
+          <Property Name="BusCompanyId" Type="Int32" />
+          <Property Name="routeId" Type="Int32" />
+          <NavigationProperty Name="BusCompany" Relationship="BusBookingTicketModel.FK_BusDetails_BusCompany" FromRole="BusDetails" ToRole="BusCompany" />
+          <NavigationProperty Name="Route" Relationship="BusBookingTicketModel.FK_BusDetails_Route" FromRole="BusDetails" ToRole="Route" />
+          <NavigationProperty Name="BusSeatTypeMaps" Relationship="BusBookingTicketModel.FK_BusSeatTypeMap_BusDetails" FromRole="BusDetails" ToRole="BusSeatTypeMap" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_BusDetails" FromRole="BusDetails" ToRole="Reservation" />
+          <NavigationProperty Name="RoutePrices" Relationship="BusBookingTicketModel.FK_RoutePrice_BusDetails" FromRole="BusDetails" ToRole="RoutePrice" />
+        </EntityType>
+        <EntityType Name="BusSeatTypeMap">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="BusId" Type="Int32" Nullable="false" />
+          <Property Name="SeatTypeId" Type="Int32" />
+          <Property Name="TotalSeatCount" Type="Int32" />
+          <NavigationProperty Name="BusDetail" Relationship="BusBookingTicketModel.FK_BusSeatTypeMap_BusDetails" FromRole="BusSeatTypeMap" ToRole="BusDetails" />
+          <NavigationProperty Name="SeatType" Relationship="BusBookingTicketModel.FK_BusSeatTypeMap_SeatType" FromRole="BusSeatTypeMap" ToRole="SeatType" />
+        </EntityType>
+        <EntityType Name="CityDetail">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StateDetail" Relationship="BusBookingTicketModel.FK_CityDetails_StateDetails" FromRole="CityDetails" ToRole="StateDetails" />
+          <NavigationProperty Name="Routes" Relationship="BusBookingTicketModel.FK_Route_CityDetails" FromRole="CityDetails" ToRole="Route" />
+          <NavigationProperty Name="Routes1" Relationship="BusBookingTicketModel.FK_Route_CityDetails1" FromRole="CityDetails" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="PassangerDetail">
+          <Key>
+            <PropertyRef Name="Passangerid" />
+          </Key>
+          <Property Name="Passangerid" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="TicketNumber" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="UserDetail" Relationship="BusBookingTicketModel.FK_PassangerDetails_UserDetails" FromRole="PassangerDetails" ToRole="UserDetails" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_PassangerDetails" FromRole="PassangerDetails" ToRole="Reservation" />
+        </EntityType>
+        <EntityType Name="PayMentDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CVV" Type="Int32" />
+          <Property Name="ExpiryMonth" Type="Byte" />
+          <Property Name="NameOfCardHolder" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="ExpiryYear" Type="Int32" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_PayMentDetails" FromRole="PayMentDetails" ToRole="Reservation" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="Int32" Nullable="false" />
+          <Property Name="routeId" Type="Int32" />
+          <Property Name="passangerId" Type="Int32" />
+          <Property Name="BusId" Type="Int32" />
+          <Property Name="TravelDate" Type="DateTime" Precision="0" />
+          <Property Name="SeatNumber" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="BoardingPointId" Type="Int32" />
+          <Property Name="PaymentDetailsId" Type="Int32" />
+          <NavigationProperty Name="BoardingPoint" Relationship="BusBookingTicketModel.FK_Reservation_BoardingPoint" FromRole="Reservation" ToRole="BoardingPoint" />
+          <NavigationProperty Name="BusDetail" Relationship="BusBookingTicketModel.FK_Reservation_BusDetails" FromRole="Reservation" ToRole="BusDetails" />
+          <NavigationProperty Name="PassangerDetail" Relationship="BusBookingTicketModel.FK_Reservation_PassangerDetails" FromRole="Reservation" ToRole="PassangerDetails" />
+          <NavigationProperty Name="PayMentDetail" Relationship="BusBookingTicketModel.FK_Reservation_PayMentDetails" FromRole="Reservation" ToRole="PayMentDetails" />
+          <NavigationProperty Name="Route" Relationship="BusBookingTicketModel.FK_Reservation_Route" FromRole="Reservation" ToRole="Route" />
+          <NavigationProperty Name="UserDetail" Relationship="BusBookingTicketModel.FK_Reservation_UserDetails" FromRole="Reservation" ToRole="UserDetails" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="FromCityId" Type="Int32" Nullable="false" />
+          <Property Name="ToCityId" Type="Int32" Nullable="false" />
+          <Property Name="Distance" Type="Int32" />
+          <Property Name="DepartureTime" Type="Time" Precision="7" />
+          <Property Name="ArrivalTime" Type="Time" Precision="7" />
+          <NavigationProperty Name="BusDetails" Relationship="BusBookingTicketModel.FK_BusDetails_Route" FromRole="Route" ToRole="BusDetails" />
+          <NavigationProperty Name="CityDetail" Relationship="BusBookingTicketModel.FK_Route_CityDetails" FromRole="Route" ToRole="CityDetails" />
+          <NavigationProperty Name="CityDetail1" Relationship="BusBookingTicketModel.FK_Route_CityDetails1" FromRole="Route" ToRole="CityDetails" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_Route" FromRole="Route" ToRole="Reservation" />
+          <NavigationProperty Name="RoutePrices" Relationship="BusBookingTicketModel.FK_RoutePrice_Route" FromRole="Route" ToRole="RoutePrice" />
+        </EntityType>
+        <EntityType Name="RoutePrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="routeId" Type="Int32" Nullable="false" />
+          <Property Name="BusId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SeatTypeId" Type="Int32" />
+          <NavigationProperty Name="BusDetail" Relationship="BusBookingTicketModel.FK_RoutePrice_BusDetails" FromRole="RoutePrice" ToRole="BusDetails" />
+          <NavigationProperty Name="Route" Relationship="BusBookingTicketModel.FK_RoutePrice_Route" FromRole="RoutePrice" ToRole="Route" />
+          <NavigationProperty Name="SeatType" Relationship="BusBookingTicketModel.FK_RoutePrice_SeatType" FromRole="RoutePrice" ToRole="SeatType" />
+        </EntityType>
+        <EntityType Name="SeatType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="SeatType1" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="BusSeatTypeMaps" Relationship="BusBookingTicketModel.FK_BusSeatTypeMap_SeatType" FromRole="SeatType" ToRole="BusSeatTypeMap" />
+          <NavigationProperty Name="RoutePrices" Relationship="BusBookingTicketModel.FK_RoutePrice_SeatType" FromRole="SeatType" ToRole="RoutePrice" />
+        </EntityType>
+        <EntityType Name="StateDetail">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateName" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="StateId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="CityDetails" Relationship="BusBookingTicketModel.FK_CityDetails_StateDetails" FromRole="StateDetails" ToRole="CityDetails" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PasswordOfUser" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNumber" Type="Int32" />
+          <Property Name="NameOfCardHolder" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Pincode" Type="Int32" />
+          <NavigationProperty Name="PassangerDetails" Relationship="BusBookingTicketModel.FK_PassangerDetails_UserDetails" FromRole="UserDetails" ToRole="PassangerDetails" />
+          <NavigationProperty Name="Reservations" Relationship="BusBookingTicketModel.FK_Reservation_UserDetails" FromRole="UserDetails" ToRole="Reservation" />
+        </EntityType>
+        <Association Name="FK_Reservation_BoardingPoint">
+          <End Role="BoardingPoint" Type="BusBookingTicketModel.BoardingPoint" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BoardingPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="BoardingPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusDetails_BusCompany">
+          <End Role="BusCompany" Type="BusBookingTicketModel.BusCompany" Multiplicity="0..1" />
+          <End Role="BusDetails" Type="BusBookingTicketModel.BusDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusCompany">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusDetails">
+              <PropertyRef Name="BusCompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusDetails_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Route" Multiplicity="0..1" />
+          <End Role="BusDetails" Type="BusBookingTicketModel.BusDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BusDetails">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusSeatTypeMap_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.BusDetail" Multiplicity="1" />
+          <End Role="BusSeatTypeMap" Type="BusBookingTicketModel.BusSeatTypeMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="BusSeatTypeMap">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.BusDetail" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_BusDetails">
+          <End Role="BusDetails" Type="BusBookingTicketModel.BusDetail" Multiplicity="1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusDetails">
+              <PropertyRef Name="BusId" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="BusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusSeatTypeMap_SeatType">
+          <End Role="SeatType" Type="BusBookingTicketModel.SeatType" Multiplicity="0..1" />
+          <End Role="BusSeatTypeMap" Type="BusBookingTicketModel.BusSeatTypeMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BusSeatTypeMap">
+              <PropertyRef Name="SeatTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CityDetails_StateDetails">
+          <End Role="StateDetails" Type="BusBookingTicketModel.StateDetail" Multiplicity="1" />
+          <End Role="CityDetails" Type="BusBookingTicketModel.CityDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateDetails">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="CityDetails">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_CityDetails">
+          <End Role="CityDetails" Type="BusBookingTicketModel.CityDetail" Multiplicity="1" />
+          <End Role="Route" Type="BusBookingTicketModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDetails">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="FromCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Route_CityDetails1">
+          <End Role="CityDetails" Type="BusBookingTicketModel.CityDetail" Multiplicity="1" />
+          <End Role="Route" Type="BusBookingTicketModel.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDetails">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Route">
+              <PropertyRef Name="ToCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassangerDetails_UserDetails">
+          <End Role="UserDetails" Type="BusBookingTicketModel.UserDetail" Multiplicity="0..1" />
+          <End Role="PassangerDetails" Type="BusBookingTicketModel.PassangerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetails">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PassangerDetails">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_PassangerDetails">
+          <End Role="PassangerDetails" Type="BusBookingTicketModel.PassangerDetail" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PassangerDetails">
+              <PropertyRef Name="Passangerid" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="passangerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_PayMentDetails">
+          <End Role="PayMentDetails" Type="BusBookingTicketModel.PayMentDetail" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PayMentDetails">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="PaymentDetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Route" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_UserDetails">
+          <End Role="UserDetails" Type="BusBookingTicketModel.UserDetail" Multiplicity="0..1" />
+          <End Role="Reservation" Type="BusBookingTicketModel.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserDetails">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_Route">
+          <End Role="Route" Type="BusBookingTicketModel.Route" Multiplicity="1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="routeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoutePrice_SeatType">
+          <End Role="SeatType" Type="BusBookingTicketModel.SeatType" Multiplicity="0..1" />
+          <End Role="RoutePrice" Type="BusBookingTicketModel.RoutePrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RoutePrice">
+              <PropertyRef Name="SeatTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BusBookingTicketModelStoreContainer" CdmEntityContainer="BusBookingTicketEntities">
+          <EntitySetMapping Name="BoardingPoints">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.BoardingPoint">
+              <MappingFragment StoreEntitySet="BoardingPoint">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BoardingPointName" ColumnName="BoardingPointName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusCompanies">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.BusCompany">
+              <MappingFragment StoreEntitySet="BusCompany">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BusCompanyName" ColumnName="BusCompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.BusDetail">
+              <MappingFragment StoreEntitySet="BusDetails">
+                <ScalarProperty Name="BusId" ColumnName="BusId" />
+                <ScalarProperty Name="BusNumber" ColumnName="BusNumber" />
+                <ScalarProperty Name="NoOfSeats" ColumnName="NoOfSeats" />
+                <ScalarProperty Name="BusType" ColumnName="BusType" />
+                <ScalarProperty Name="BusTime" ColumnName="BusTime" />
+                <ScalarProperty Name="BusCompanyId" ColumnName="BusCompanyId" />
+                <ScalarProperty Name="routeId" ColumnName="routeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusSeatTypeMaps">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.BusSeatTypeMap">
+              <MappingFragment StoreEntitySet="BusSeatTypeMap">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BusId" ColumnName="BusId" />
+                <ScalarProperty Name="SeatTypeId" ColumnName="SeatTypeId" />
+                <ScalarProperty Name="TotalSeatCount" ColumnName="TotalSeatCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CityDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.CityDetail">
+              <MappingFragment StoreEntitySet="CityDetails">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassangerDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.PassangerDetail">
+              <MappingFragment StoreEntitySet="PassangerDetails">
+                <ScalarProperty Name="Passangerid" ColumnName="Passangerid" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayMentDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.PayMentDetail">
+              <MappingFragment StoreEntitySet="PayMentDetails">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="ExpiryMonth" ColumnName="ExpiryMonth" />
+                <ScalarProperty Name="NameOfCardHolder" ColumnName="NameOfCardHolder" />
+                <ScalarProperty Name="ExpiryYear" ColumnName="ExpiryYear" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="routeId" ColumnName="routeId" />
+                <ScalarProperty Name="passangerId" ColumnName="passangerId" />
+                <ScalarProperty Name="BusId" ColumnName="BusId" />
+                <ScalarProperty Name="TravelDate" ColumnName="TravelDate" />
+                <ScalarProperty Name="SeatNumber" ColumnName="SeatNumber" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BoardingPointId" ColumnName="BoardingPointId" />
+                <ScalarProperty Name="PaymentDetailsId" ColumnName="PaymentDetailsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routes">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.Route">
+              <MappingFragment StoreEntitySet="Route">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FromCityId" ColumnName="FromCityId" />
+                <ScalarProperty Name="ToCityId" ColumnName="ToCityId" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoutePrices">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.RoutePrice">
+              <MappingFragment StoreEntitySet="RoutePrice">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="routeId" ColumnName="routeId" />
+                <ScalarProperty Name="BusId" ColumnName="BusId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SeatTypeId" ColumnName="SeatTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeatTypes">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.SeatType">
+              <MappingFragment StoreEntitySet="SeatType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SeatType1" ColumnName="SeatType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.StateDetail">
+              <MappingFragment StoreEntitySet="StateDetails">
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="BusBookingTicketModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="PasswordOfUser" ColumnName="PasswordOfUser" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="NameOfCardHolder" ColumnName="NameOfCardHolder" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
