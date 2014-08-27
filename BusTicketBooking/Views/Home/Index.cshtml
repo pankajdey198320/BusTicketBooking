@@ -19,5 +19,56 @@
          dateFormat: "yy-dd-mm"
      });
 
+     $('#fromCity').autocomplete({
+
+         //make ajax call
+         source: function (request, response) 
+         {
+             $.ajax({
+                 url: "Home/ShowCityNames/",
+                 type: 'POST',
+                 data: { strTerm: request.term },
+                 dataType: 'json',
+                 success: function (data) {
+                     // call autocomplete callback method with results  
+                     response($.map(data, function (data) {
+                         return {
+                             label: data.CityName,
+                             value: data.CityId
+                         }
+                     }));
+                 },
+                 error: function (XMLHttpRequest, textStatus, errorThrown) {
+                     alert('Error occured while autocomplete');
+                 },
+             });
+         }
+     });
+
+     $('#toCity').autocomplete({
+
+         //make ajax call
+         source: function (request, response) {
+             $.ajax({
+                 url: "Home/ShowCityNames/",
+                 type: 'POST',
+                 data: { strTerm: request.term },
+                 dataType: 'json',
+                 success: function (data) {
+                     // call autocomplete callback method with results  
+                     response($.map(data, function (data) {
+                         return {
+                             label: data.CityName,
+                             value: data.CityId
+                         }
+                     }));
+                 },
+                 error: function (XMLHttpRequest, textStatus, errorThrown) {
+                     alert('Error occured while autocomplete');
+                 },
+             });
+         }
+     });
+
 </script>
     }
